@@ -20,7 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
+Route::post('/todos/create', [App\Http\Controllers\TodoController::class, 'store']);Auth::routes();
+Route::put('/todos/{todo}', [App\Http\Controllers\TodoController::class, 'update']);
+Route::delete('/todos/{todo}', [App\Http\Controllers\TodoController::class, 'destroy']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
